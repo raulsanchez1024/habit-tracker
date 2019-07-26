@@ -1,3 +1,7 @@
+::selection {
+  background: #3ecf8e;
+}
+
 .App {
   background-image: url("./Aqua-Marine.jpg");
   min-height: 100%;
@@ -23,17 +27,96 @@
   font-family: 'Poppins', sans-serif;
 }
 
-ul {
-  list-style: none;
+.habit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  width: 100%;
 }
 
 input:focus {
   outline: none;
 }
 
+input:checked {
+  color: #f57a78;
+
+}
+
+ul {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+ul li {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  padding: 12px 8px 12px 40px;
+  width: 30%;
+}
+
+@media (max-width: 650px) {
+  .habit-container {
+    width: 50%;
+  }
+  ul {
+    margin-left: -20px;
+  }
+  ul li {
+    /* border: 1px solid black; */
+    width: 90%;
+    margin-left: 40px;
+  }
+  ul li .delete-btn {
+    margin-right: 20px;
+  }
+}
+
+.habit-form {
+  display: flex;
+}
+
+.habit-checkbox {
+  position: relative;
+  flex-grow: 0;
+  margin-left: -25px;
+}
+
+.text {
+  flex-grow: 2;
+  margin-top: -4px;
+  padding-left: 5px;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #f57a78;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  height: 20px;
+  margin-right: 10px;
+  position: relative;
+  width: 20px;
+}
+
 .done {
   text-decoration: line-through;
   color: #c2c2c2;
+}
+.undone {
+  text-decoration: none;
 }
 
 #habit-input {
@@ -53,6 +136,7 @@ input:focus {
   border-bottom: 5px solid #32a672;
   border-radius: 7px;
   color: white;
+  cursor: pointer;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 600;
